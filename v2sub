@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+
+from v2lib import *
+
+# check if the user is root
+isSU()
+V2rayInstallation()
+
+mode = '-c'
+
+if len(sys.argv) > 1:
+    mode = sys.argv[1]
+#add, show subscribe, list server, open v2ray
+if mode == '-c':
+    getSubLists(getSubcribeURL())
+    for i in serverList:
+        print(i)
+    askForNode()
+    exit()
+
+if mode == '-a':
+    addSubcription()
+    print("Subscription added")
+    exit()
+
+if mode == '-s':
+    print(getSubcribeURL())
+    exit()
+
+if mode == '-l':
+    getSubLists(getSubcribeURL())
+    for i in serverList:
+        print(i)
+    exit()
+
+if mode == '-h':
+    print("default:\n\t-c\t\tchange node")
+    print("otherL:\n\t-a [url]\tadd subscription")
+    print("\t-s\t\tshow subscription URL")
+    print("\t-l\t\tlist all servers")
+    exit()
+
+print("Unknown command options:"+str(sys.argv))
+print("run with '-h' option for help")
+exit()
