@@ -8,7 +8,6 @@ isSU()
 V2rayInstallation()
 
 mode = '-c'
-
 if len(sys.argv) > 1:
     mode = sys.argv[1]
 #add, show subscribe, list server, open v2ray

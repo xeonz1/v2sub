@@ -1,9 +1,11 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
 import base64
 import json
 import os
 import subprocess
 import sys
-# import time
+import time
 import requests
 # import urllib
 from v2ray import V2ray
@@ -138,10 +140,9 @@ def addSubcription():
     else:
         print("Subscription format error")
         exit()
-
     subFile = open(v2subConfigPath, 'w')
     jsonConf={
-        "Link": subLink,
+        "link": subLink,
         "last": -1,
     }
     subFile.write(json.dumps(jsonConf, indent=4))
@@ -174,6 +175,7 @@ def getSubcribeURL():
 
     subFile = open(v2subConfigPath, 'r')
     subLink = json.load(subFile)['link']
+
     subFile.close()
     return subLink
 
