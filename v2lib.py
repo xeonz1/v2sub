@@ -125,9 +125,10 @@ def V2rayInstallation():
             subprocess.check_call('bash go.sh', shell=True)
             print('Cleaning temporary files...')
             subprocess.run('rm -rf go.sh', shell=True)
+            exit()
         else:
             print('Please install V2ray before run this script.')
-            exit();
+            exit()
 
 
 # add a subscription
