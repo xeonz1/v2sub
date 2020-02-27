@@ -192,8 +192,9 @@ def switchNode(setServerNodeId):
     print('Proxy ip: 127.0.0.1')
     print('Proxy port：1080')
     # record subscribe server choosed
-    subFile = open(v2subConfigPath, 'rw')
+    subFile = open(v2subConfigPath, 'r')
     jsonConf = json.load(subFile)
+    subFile = open(v2subConfigPath, 'w')
     jsonConf["last"] = setServerNodeId
     subFile.write(json.dumps(jsonConf, indent=4))
     subFile.close()
